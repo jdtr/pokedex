@@ -1,0 +1,147 @@
+// ================= Components ===================
+
+// logo
+.logo {
+    &-only {
+        margin-bottom: 30px;
+    }
+}
+
+.c-card {
+    border-radius: 12px;
+    box-shadow: 0 4px 8px 0 rgba($black,0.1);
+}
+.card-form {
+    padding: 40px 30px 50px 30px;
+    &__options {
+        margin-top: 40px;
+        .u-btn {
+            margin-bottom: 15px;
+        }
+    }
+
+    &--login, &--register {
+        width: 100%;
+    }
+    &--login {
+        max-width: 400px;
+    }
+    &--register {
+        max-width: 500px;
+    }
+}
+.c-field {
+    position: relative;
+    width: 100%;
+    margin-bottom: 20px;
+
+    label, input {
+        display: block;
+    }
+    label {
+        font-weight: 600;
+        margin-bottom: 10px;
+    }
+    input {
+        width: 100%;
+        padding: 10px 12px;
+        border: 1px solid rgba(black, .2);
+    }
+    input[ng-reflect-model] + .msj-err:first-of-type {
+        display: block;
+        animation: msjField .3s linear forwards;
+    }
+}
+//Msj error
+.msj-err {
+    position: absolute;
+    display: none;
+    padding: 6px 12px 8px 12px;
+    background-color: $red;
+    color: white;
+    opacity: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 5;
+    border-radius: 4px;
+    transform: translateY(80%);
+    &:before {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 0;
+        top: -8px;
+        left: 0;
+        right: 0;
+        margin: auto;
+        border-style: solid;
+        border-width: 0 6px 8px 6px;
+        border-color: transparent transparent $red transparent;
+    }
+}
+
+// search 
+.c-search {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto 50px auto;
+    input {
+        display: block;
+        width: 100%;
+        padding: 12px 50px 12px 15px;
+        border: 1px solid rgba(black, .2);
+    }
+    button {        
+        width: 50px;
+        height: 100%; 
+        right: 0;
+        background-color: $blue;
+        border-top-right-radius: 12px;
+        border-bottom-right-radius: 12px;
+        transform: translateY(-50%);
+        transition: background-color .25s linear;
+        &, i {
+            position: absolute;
+            top: 50%;
+        }
+        i {
+            color: white;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        &:hover {
+            background-color: darken($blue, 10%);
+        }
+    }
+}
+
+//c-pagination
+.c-pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &__items {
+        margin-left: 10px;
+        margin-right: 10px;
+        button {
+            font-weight: bold;
+        }
+    }
+    &__btn {
+        position: relative;
+        width: 30px;
+        height: 30px;
+        background-color: $blue;
+        color: white;
+        border-radius: 50%;
+        margin: 0 10px;
+        i {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+}

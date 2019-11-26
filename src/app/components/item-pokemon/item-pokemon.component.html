@@ -1,0 +1,14 @@
+<div class="c-card card-item" [attr.data-id]="id">
+  <figure class="card-item__fig text-center">
+      <img [src]="img" [alt]="name">
+  </figure>
+  <div class="card-item__body text-center bg-white">
+      <h3 class="font-18 mg-btm-20">{{ name }}</h3>
+      <div class="card-item__types">
+        <span class="tag-type" *ngFor="let type of types">{{ type.type.name }}</span>
+      </div>
+      <div class="text-center mg-btm-20">
+          <button [routerLink]="['/detail', id]" class="u-btn u-btn--blue">See more</button>
+      </div>
+  </div><!-- / body -->
+</div>

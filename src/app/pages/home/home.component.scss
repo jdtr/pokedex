@@ -1,0 +1,17 @@
+.list-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 15px;
+    margin-bottom: 50px;
+
+    // Responsive
+    @media ( min-width: 576px ) {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    @media ( min-width: 768px ) {
+        grid-template-columns:repeat(4, 1fr);
+    }
+    @media ( min-width: 992px ) {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}

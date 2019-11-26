@@ -1,0 +1,38 @@
+<div class="bg-gray-light full-page">
+  <div class=" logo-only">
+    <img src="../../../../../assets/images/logo-pokemon.svg" alt="Pokemon">
+  </div>
+  <div class="c-card card-form card-form--register bg-white">
+      <form (ngSubmit)="register(forma)" #forma="ngForm">
+          <div class="c-field">
+              <label for="name" class="color-blue">Full name - {{ user.name }}</label>
+              <input type="text" name="name" minlength="4" [(ngModel)]="user.name" required #nameUser="ngModel">
+              <span class="msj-err" *ngIf="nameUser.errors?.required">name is required</span>
+          </div>
+          <div class="c-field">
+              <label for="email" class="color-blue">Email</label>
+              <input type="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" [(ngModel)]="user.email" required #mail="ngModel">
+              <span class="msj-err" *ngIf="mail.errors?.required">Email is required</span>
+              <span class="msj-err" *ngIf="mail.errors?.pattern">Invalid email</span>
+          </div>
+          <div class="c-field">
+            <label for="password" class="color-blue">Password</label>
+            <input type="password" name="password"  pattern="^(?=.*[a-z])(?=.*[A-Z]{2})(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$" 
+            [(ngModel)]="user.password" required #pass="ngModel">
+            <span class="msj-err" *ngIf="pass.errors?.required">Password is required</span>
+            <span class="msj-err" *ngIf="pass.errors?.pattern">Invalid pasword</span>
+          </div>
+          <div class="c-field">
+              <label for="confirm-password" class="color-blue">Confirm Password</label>
+              <input type="password" name="confirm-password" pattern="^(?=.*[a-z])(?=.*[A-Z]{2})(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$" 
+              [(ngModel)]="confirmPassword" required #confPass="ngModel">
+              <span class="msj-err" *ngIf="confPass.errors?.required">Password is required</span>
+            <span class="msj-err" *ngIf="confPass.errors?.pattern">Invalid pasword</span>
+            </div>
+          <div class="text-center card-form__options">
+            <button class="u-btn u-btn--blue">Register</button>
+            <p><a href="/" class="t-uderline">Return</a></p>
+          </div>
+      </form><!--- /form -->
+  </div>
+</div><!-- /Full-page -->

@@ -1,0 +1,40 @@
+<div class="bg-gray-light">
+  <app-header></app-header>
+  <div class="content-main">
+      <div class="c-search">
+        <input type="search" placeholder="Search Pokémon" #searchPokemons>
+        <button (click)="searchPokemon(searchPokemons.value)">
+            <i class="material-icons">search</i>
+        </button>
+      </div><!-- /Search -->
+      <div class="list-grid">
+        <app-item-pokemon 
+          *ngFor="let pokemon of pokemons" 
+          name="{{ pokemon.name }}"
+          id="{{ pokemon.id }}"
+          img="{{ pokemon.sprites.front_default }}"
+          [types]="pokemon.types"
+          data-aos="fade-up"
+          ></app-item-pokemon>
+
+      </div>
+      <div class="c-pagination">
+        <button class="c-pagination__btn" (click)="prev()" [disabled]="prevPage == null">
+            <i class="material-icons">arrow_left</i>
+        </button>
+        <!-- <div class="c-pagination__items">
+          <button>1</button>
+          <button>2</button>
+          <button>3</button>
+          <button>4</button>
+          <button>5</button>
+          <button>6</button>
+        </div> -->
+        <button class="c-pagination__btn" (click)="next()" [disabled]="nextPage == null">
+            <i class="material-icons">arrow_right</i>
+        </button>
+      </div> 
+  </div>
+  <app-footer></app-footer>
+</div>
+

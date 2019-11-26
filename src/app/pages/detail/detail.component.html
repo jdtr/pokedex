@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="detail card bg-white">
+      <h1 class="color-blue text-center">{{ pokemon?.name }} - #{{ pokemon?.id }}</h1>
+      <a [routerLink]="['/home/list']" class="detail__return">
+        <i class="material-icons">chevron_left</i> Return</a>
+      <div class="flex-container mg-btm-50 flex-justify-center">
+          <div class="detail__card">
+              <figure class="detail__fig">
+                  <img [src]="pokemon?.sprites?.front_default" alt="pokemon?.name" />
+              </figure>
+              <div class="detail__caption">
+                  <ul class="d-flex d-flex--column flex-justify-center">
+                      <li><strong>Height:</strong> {{ pokemon?.height }}</li>
+                      <li><strong>weight:</strong> {{ pokemon?.weight }}</li>
+                  </ul>
+              </div>
+          </div>
+          <div class="detail__chain">
+              <h3>Evolution chain</h3>
+              <ul *ngIf="evolutions">
+                  <li *ngFor="let evolution of evolutions">{{ evolution.species.name }}</li>
+               </ul>
+          </div>
+      </div>
+      <div class="detail__info mg-btm-50">
+          <h3 class="mg-btm-30">List of movements</h3>
+          <ul>
+              <li *ngFor="let move of moves">{{ move.move.name }}</li>
+           </ul>
+      </div><!-- /detail__info-->
+  </div><!-- /detail -->
+</div>

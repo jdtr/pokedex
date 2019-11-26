@@ -1,0 +1,163 @@
+// ================= tags ===================
+html {
+    font-family: $lato;
+    color: $black;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: $roboto;
+    font-weight: bold;
+}
+h1 {
+    font-size: $size-30;
+}
+h2 {
+    font-size: $size-25;
+}
+h3 {
+    font-size: $size-21;
+}
+h4 {
+    font-size: $size-18;
+}
+h5 {
+    font-size: 1rem;
+}
+h6 {
+    font-size:$size-14;
+}
+p {
+    margin-bottom: 15px;
+}
+
+input {
+    font-size: 1rem;
+    border-radius: 8px;
+    &:focus {
+        outline: transparent;
+    }
+}
+button {
+    font-size: 1rem;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+
+    &:disabled {
+        cursor: normal;
+        opacity: 0.5;
+        pointer-events: none;
+    }
+}
+a {
+    color: $blue;
+}
+img {
+    max-width: 100%;
+}
+strong {
+    font-weight: bold;
+}
+
+// ================= Display ===================
+.d-flex {
+    display: flex;
+    &--column {
+        flex-direction: column;
+    }
+}
+
+// ================= margin & padding ===================
+.mg-btm-20 {
+    margin-bottom: 20px;
+}
+.mg-btm-30 {
+    margin-bottom: 30px;
+}
+.mg-btm-50 {
+    margin-bottom: 50px;
+}
+
+
+// ================= Text ===================
+.text {
+    &-center {
+        text-align: center;
+    }
+    &-right {
+        text-align: right;
+    }
+}
+.t-underline {
+    text-decoration: underline;
+}
+
+.font {
+    &-14 {
+        font-size: $size-14;
+    }
+    &-18 {
+        font-size: $size-18;
+    }
+    &-21 {
+        font-size: $size-21;
+    }
+}
+
+// ================= colors &Backgrounds ===================
+.color {
+    &-blue {
+        color: $blue;
+    }
+}
+.bg {
+    &-white {
+        background-color: white;
+    }
+    &-gray-light {
+        background-color: $gray-light;
+    }
+}
+
+// ================= layout ===================
+.full-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+}
+.content-main {
+    padding: 150px 30px;
+    padding-top: 120px;
+    padding-bottom: 60px;
+    min-height: calc(100vh - 50px);
+}
+
+// ================= Buttons ===================
+.u-btn {
+    display: inline-block;
+    position: relative;
+    padding: 10px 12px;
+    text-align: center;
+    min-width: 100px;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: background-color .25s linear;
+    &--blue {
+        background-color: $blue;
+        color: white;
+        &:hover {
+            background-color: darken($blue, 15%);
+        }
+    }
+    &--red {
+        background-color: $red;
+        color: white;
+        &:hover {
+            background-color: darken($red, 15%);
+        }
+    }
+}
+

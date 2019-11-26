@@ -1,0 +1,40 @@
+@import '../../../assets/scss/var-mixins';
+.card-item {
+    cursor: pointer;
+    transition: box-shadow .2s linear;
+
+    h3 {
+        &:first-letter {
+            text-transform: uppercase;
+        }
+    }
+
+    &__fig {
+        height: 95px;
+        background-color: rgba($yellow, .1);
+    }
+    &__body {
+        padding: 10px 15px;
+        border-bottom-left-radius: 8px;
+        border-bottom-right-radius: 8px;  
+    }
+    &__types {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }   
+    .tag-type {
+        display: inline-block;
+        padding: 5px 10px 6px 10px;
+        border-radius: 4px;
+        border: 1px solid $blue;
+        color: $blue;
+        margin: 0 4px 10px 4px;
+        line-height: 1;
+        &:first-letter {
+            text-transform: uppercase;
+        }
+    }
+    &:hover {
+        box-shadow: 0 3px 10px 0 rgba($black,0.2);
+    }
+}

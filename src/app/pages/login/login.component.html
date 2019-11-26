@@ -1,0 +1,25 @@
+<div class="bg-gray-light full-page">
+  <div class=" logo-only">
+    <img src="../../../../../assets/images/logo-pokemon.svg" alt="Pokemon">
+  </div>
+  <div class="c-card card-form card-form--login bg-white">
+      <form (ngSubmit)="login(forma)" #forma="ngForm" novalidate>
+          <div class="c-field">
+              <label for="email" class="color-blue">Email</label>
+              <input type="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" 
+                  [(ngModel)]="user.email" required #mail="ngModel">
+                  <span class="msj-err" *ngIf="mail.errors?.pattern">Invalid email</span>
+          </div>
+          <div class="c-field">
+            <label for="password" class="color-blue">Password</label>
+            <input type="password" name="password" minlength="8" pattern="^(?=.*[a-z])(?=.*[A-Z]{2})(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$" 
+                [(ngModel)]="user.password" required #pass="ngModel">
+        </div>
+        <div class="text-center card-form__options">
+          <button class="u-btn u-btn--blue">Sign In</button>
+          <p class="font-14">You don't have an account? <a href="/register" class="t-uderline">Register</a></p>
+        </div>
+      </form><!--- /form -->
+  </div>
+</div><!-- /Full-page -->
+
